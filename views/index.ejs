@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (locals.fileLink != null) {%> 
+    <div style="margin-bottom: 1rem;">
+        your file is upload
+        <a href="<%= locals.fileLink%>"><%= locals.fileLink %></a>
+    </div>    
+    
+
+        <% } %> 
+    <form action="/upload" method="post" enctype="multipart/form-data" style="display: grid; gap: .5rem; grid-template-columns:auto 1fr; max-width:500px;margin: 0 auto;margin-top: 20%; background-color: rgb(135, 184, 184); padding: 100px 50px;">
+        <label for="file" >File:</label>
+        <input type="file" name="file" id="file" required>
+        <label for="password" >password:</label>
+        <input type="password" name="password" id="password">
+        <button>Summit</button>
+    </form>
+</body>
+</html>
